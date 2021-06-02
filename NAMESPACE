@@ -2,4 +2,5 @@
 
 export(add_metadata_to_df)
 export(align_with)
+export(zip)
 importFrom(stringr,str_split)

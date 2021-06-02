@@ -45,3 +45,15 @@ add_metadata_to_df <- function(data, filename) {
                        date = rep(metadata["date"], n))
   return(cbind(metadf, data))
 }
+
+#' @export
+zip <- function(lists, names) {
+  nlist <- length(lists)
+  v <- unlist(lists)
+  mat <- matrix(v, ncol = nlist)
+  lapply(seq_len(nrow(mat)), function(i) {
+    l <- as.list(mat[i, ])
+    names(l) <- names
+    l
+  })
+}
